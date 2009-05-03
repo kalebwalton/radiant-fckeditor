@@ -1,13 +1,13 @@
 function instantiateFCKEditor(partIndex){
 	var usedFilter = $('part_' + partIndex +'_filter_id');
-	if(usedFilter.value == 'Fckeditor'){
+	if(usedFilter.value == 'Rich Text'){
 		putInEditor(partIndex);
 	}
 }
 
 function toggleEditor(partIndex){
 	var filterId = $('part_' + partIndex + '_filter_id');
-	if(filterId.value == 'Fckeditor'){
+	if(filterId.value == 'Rich Text'){
 		putInEditor(partIndex);
 	} else {
 		removeEditor(partIndex);
@@ -28,6 +28,7 @@ function removeEditor(partIndex){
 function putInEditor(partIndex){
 	var oFCKeditor = new FCKeditor('part_'+ partIndex +'_content', '600px', '600px', 'Default');
 	var page_type = $F('page_class_name');
+  oFCKeditor.ToolbarSet = 'Simple' ;
 	oFCKeditor.BasePath = "/javascripts/fckeditor/"
 	oFCKeditor.Config['CustomConfigurationsPath'] = '/fckeditor/config?class_name=' + page_type;
 	oFCKeditor.Width = '100%' ;

@@ -162,7 +162,7 @@ DialogBlocked		: "It was not possible to open the dialog window. Make sure all p
 DlgBtnOK			: "OK",
 DlgBtnCancel		: "Cancel",
 DlgBtnClose			: "Close",
-DlgBtnBrowseServer	: "Browse Server",
+DlgBtnBrowseServer	: "Browse File Manager",
 DlgAdvancedTag		: "Advanced",
 DlgOpOther			: "<Other>",
 DlgInfoTab			: "Info",

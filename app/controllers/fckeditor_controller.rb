@@ -3,6 +3,7 @@ require 'tmpdir'
 
 class FckeditorController < ApplicationController
   include ActionView::Helpers::SanitizeHelper
+  extend ActionView::Helpers::SanitizeHelper::ClassMethods
   protect_from_forgery :except => [:command,:check_spelling,:config]
   UPLOADED = "/uploads"
   UPLOADED_ROOT = RAILS_ROOT + "/public" + UPLOADED
