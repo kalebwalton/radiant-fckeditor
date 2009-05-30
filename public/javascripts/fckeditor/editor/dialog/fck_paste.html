@@ -226,7 +226,9 @@ function CleanWord( oNode, bIgnoreFont, bRemoveStyles )
 
 	html = html.replace( /<SPAN\s*>(.*?)<\/SPAN>/gi, '$1' ) ;
 
-	html = html.replace( /<FONT\s*>(.*?)<\/FONT>/gi, '$1' ) ;
+  // Remove all font opening and closing tags
+	html = html.replace( /<FONT\s*([a-zA-Z]+)=("|')#{1}([a-zA-Z0-9\.-_]+)("|')>/gi, ''); 	
+	html = html.replace( /<\/FONT\s*>/gi, '');
 
 	// Remove XML elements and declarations
 	html = html.replace(/<\\?\?xml[^>]*>/gi, '' ) ;

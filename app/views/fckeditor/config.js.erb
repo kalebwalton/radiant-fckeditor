@@ -67,13 +67,15 @@ FCKConfig.ToolbarSets["Simple"] = [
   ['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote'],
   ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
   ['Link','Unlink'],
-  ['Image','Table','Rule','SpecialChar'],
+  ['Image','Flash', 'YouTube', 'Table','Rule','SpecialChar'],
   '/',
-  ['FontFormat'],
+  ['FontFormat', 'FontSize'],
   ['TextColor','BGColor'],
   ['FitWindow','ShowBlocks','-','About'] // No comma for the last row.
 ];
 
 // Removed some questionable items: 'Style', 'Smiley', 'FontName', 'FontSize','Subscript','Superscript','Anchor'
+
+FCKConfig.Plugins.Add( 'youtube', 'en,ja' ) ;
 
 
