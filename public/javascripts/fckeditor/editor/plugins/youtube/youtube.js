@@ -82,7 +82,7 @@ function UpdateEmbed( e )
 	
 	SetAttribute( e, 'type'			, 'application/x-shockwave-flash' ) ;
 	SetAttribute( e, 'pluginspage'	, 'http://www.macromedia.com/go/getflashplayer' ) ;
-	SetAttribute( e, 'allowfullscreen' , ‘true’ ) ;
+	SetAttribute( e, 'allowfullscreen' , 'true') ;
   
 	if ( GetE('radioHigh').checked ) {
 		SetAttribute( e, 'src'		, 'http://www.youtube.com/v/'+youtubeId+'%26hl=en%26fs=1%26rel=0%26ap=%2526fmt=18') ;
