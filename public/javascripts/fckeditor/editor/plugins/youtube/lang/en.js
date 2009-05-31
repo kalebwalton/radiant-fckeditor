@@ -10,9 +10,9 @@
  */
 
 FCKLang['YouTubeTip']			= 'Insert/Edit YouTube' ;
-FCKLang['DlgYouTubeTitle']		= 'YouTube Property' ;
-FCKLang['DlgYouTubeCode']		= '"Please insert the URL of YouTube videos."' ;
-FCKLang['DlgYouTubeSecurity']	= 'Invalid URL.' ;
+FCKLang['DlgYouTubeTitle']		= 'YouTube Properties' ;
+FCKLang['DlgYouTubeCode']		= '"Please insert the URL of YouTube video"' ;
+FCKLang['DlgYouTubeSecurity']	= 'Invalid URL' ;
 FCKLang['DlgYouTubeURL']	    = 'URL' ;
 FCKLang['DlgYouTubeWidth']	    = 'Width' ;
 FCKLang['DlgYouTubeHeight']	    = 'Height' ;
