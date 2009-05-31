@@ -33,7 +33,6 @@ window.onload = function()
 	// Activate the "OK" button.
 	dialog.SetOkButton( true ) ;
 
-	SelectField( 'txtUrl' ) ;
 }
 
 //#### The OK button was hit.
@@ -70,9 +69,9 @@ function Ok()
 		oFakeImage	= FCK.InsertElement( oFakeImage ) ;
 	}
 
-    oEditor.FCKEmbedAndObjectProcessor.RefreshView( oFakeImage, oEmbed ) ;
+    oEditor.FCKFlashProcessor.RefreshView( oFakeImage, oEmbed ) ;
 
-	return true ;
+	dialog.Cancel();
 }
 
 function UpdateEmbed( e )

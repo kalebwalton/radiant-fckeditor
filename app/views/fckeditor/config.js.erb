@@ -63,19 +63,26 @@ FCKConfig.ToolbarSets["Simple"] = [
   ['Cut','Copy','Paste','PasteText','PasteWord','-','Print','SpellCheck'],
   ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
   '/',
-  ['Bold','Italic','Underline','StrikeThrough'],
   ['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote'],
   ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
   ['Link','Unlink'],
-  ['Image','Flash', 'YouTube', 'Table','Rule','SpecialChar'],
+  ['Image','Flash', 'YouTube', 'googlemaps', 'Table','Rule','SpecialChar'],
   '/',
+  ['Bold','Italic','Underline','StrikeThrough'],
   ['FontFormat', 'FontSize'],
   ['TextColor','BGColor'],
-  ['FitWindow','ShowBlocks','-','About'] // No comma for the last row.
+  ['FitWindow','ShowBlocks'] // No comma for the last row.
 ];
 
 // Removed some questionable items: 'Style', 'Smiley', 'FontName', 'FontSize','Subscript','Superscript','Anchor'
 
 FCKConfig.Plugins.Add( 'youtube', 'en,ja' ) ;
+FCKConfig.Plugins.Add( 'googlemaps', 'de,en,es,fr,it,nl,no,zh') ;
 
-
+<%
+  # If the current site is a subdomain of outrighteous.com then try to get the temp
+  # key they'll be using to do their site development.
+  condition = !@current_site.nil? && @current_site.hostname =~ /.*\.outrighteous\.com/
+  snippet_name = condition ? '_google_maps_key' : 'google_maps_key'
+%>
+FCKConfig.GoogleMaps_Key = '<%=Snippet.find_by_name(snippet_name).content rescue ''%>';
