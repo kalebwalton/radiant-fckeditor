@@ -83,9 +83,10 @@ FCKConfig.Plugins.Add( 'googlemaps', 'de,en,es,fr,it,nl,no,zh') ;
 <%
   # If the current site is a subdomain of outrighteous.com then try to get the temp
   # key they'll be using to do their site development.
-  key = 'ABQIAAAAu7pXk7tFy-sBPJwHMhiGlxTlN7MtYUqr7ra0vNWNhTqxDnHDDBQlJLL6F0gkJd3i9cmQUieZF8YOwQ'
-  unless @current_site.hostname =~ /.*\.outrighteous\.com/
-    key = Snippet.find_by_name('google_maps_key').content rescue ''
+  if request.host =~ /.*\.outrighteous\.com/
+    key = 'ABQIAAAAu7pXk7tFy-sBPJwHMhiGlxTlN7MtYUqr7ra0vNWNhTqxDnHDDBQlJLL6F0gkJd3i9cmQUieZF8YOwQ'
+  else
+    key = Site.current_site.google_maps_key rescue ''
   end
 %>
 FCKConfig.GoogleMaps_Key = '<%=key%>';
