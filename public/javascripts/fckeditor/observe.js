@@ -35,3 +35,10 @@ function putInEditor(partIndex){
 	oFCKeditor.Height = '350' ;
 	oFCKeditor.ReplaceTextarea();
 }
+
+part_added_bak = part_added;
+part_added = function() {
+  var partName = $F('part-name-field');
+  part_added_bak();
+  instantiateFCKEditor(partName);
+}
